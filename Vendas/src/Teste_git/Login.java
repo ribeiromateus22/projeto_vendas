@@ -5,7 +5,7 @@ public class Login {
 	String Senha;
 	
 	// Alterado
-	// Alterado do Eclipse
+	// Alterado do EclipseE
 	
 };
 	
