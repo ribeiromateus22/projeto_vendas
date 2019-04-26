@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+				
+	</h:head>
+
+		 
+			<h:messages showDetail="false" showSummary="true" 
+				styleClass="form-messages" errorClass="error"
+				infoClass="info" />
+  
+    <h:body> 
+                <h1>Lista de Funcionarios</h1>
+        <h:dataTable id="tabelaFuncionarios" value="#{funcionarioBean.listarFuncionarios()}" var="funcionarios" >
+            <h:column>
+                <f:facet name="header">Codigo</f:facet>
+                <h:outputLabel value="#{funcionarios.id}" />
+            </h:column>
+           
+           
+            <h:column>
+                <f:facet name="header">Nome</f:facet>
+                <h:outputLabel value="#{funcionarios.nome}" />
+            </h:column>
+			<h:column>
+                <f:facet name="header">CPF</f:facet>
+                <h:outputLabel value="#{funcionarios.cpf}" />
+            </h:column>
+			 <h:column headerText="" style="width:25px;">
+ 
+        				  
+           <h:form>
+			<h:commandButton value="Editar" action="#{funcionarioBean.alterpage}">
+					
+						 <f:param value="#{funcionarios.id}"
+                        name="id" />
+                    
+                </h:commandButton>
+                        					 
+ 				</h:form>
+        				 </h:column>
+			
+     
+           </h:dataTable>
+           
+       
+    </h:body>
+		
+	
+</html>

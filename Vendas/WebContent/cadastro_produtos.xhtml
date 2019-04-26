@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core">
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+				
+	
+	</h:head>
+	<h:body>
+
+		<h1>CADASTRO DE PRODUTOS</h1>
+
+<h:link value="Cadastrar Funcionario" outcome="cadastro_funcionarios.xhtml" />
+
+		<h:form id="frm">
+		
+
+			<h:messages showDetail="false" showSummary="true" 
+				styleClass="form-messages" errorClass="error"
+				infoClass="info" />
+
+			<h:panelGrid columns="2" styleClass="form-grid"
+					columnClasses="label, campo">
+			
+				<h:outputLabel value="Descricao"/>
+				<h:inputText size="60" 
+				    value="#{produtoBean.produto.descricao}" 
+					required="true" label="Descrição" />
+				
+				<h:outputLabel value="Valor de venda"/>
+					<h:inputText  value="#{produtoBean.produto.preco_venda}" required="true" label="Valor de Venda" >
+    					<f:convertNumber minFractionDigits="2"/>
+					</h:inputText>
+			    <h:outputLabel value="Valor de Custo"/>
+					<h:inputText  value="#{produtoBean.produto.valor_custo}" required="true" label="Valor de Custo" >
+    					<f:convertNumber minFractionDigits="2"/>
+					
+					</h:inputText>
+			<h:outputLabel value="Estoque"/>
+				<h:inputText size="60" 
+				    value="#{produtoBean.produto.estoque}" 
+					required="true" label="Estoque" />
+				
+			
+				<h:commandButton value="Cadastrar" 
+				action="#{produtoBean.cadastrar}" />
+			</h:panelGrid>
+			
+		</h:form>
+	</h:body>
+</html>
